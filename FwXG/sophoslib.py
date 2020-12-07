@@ -32,6 +32,7 @@ import xml.etree.ElementTree as ET
 import xmltodict
 import copy
 import requests
+from json import loads, dumps
 requests.packages.urllib3.disable_warnings()
 
 
@@ -79,6 +80,10 @@ class sophosxg(object):
 ##########################################################################
 # Get subclasses
 ##########################################################################
+
+    def get_localserviceacl(self):
+        self.make_xml('Get', 'LocalServiceACL')
+        return self.send()
 
     def get_adminsettings(self):
         self.make_xml('Get', 'AdminSettings')
@@ -664,7 +669,7 @@ class sophosxg(object):
         str_xml_request = ET.tostring(self.xml_request).decode('utf-8')
 
         response = requests.get(self.apiurl + str_xml_request, verify=False)
-        response_dict = xmltodict.parse(response.content)
+        response_dict = loads(dumps( xmltodict.parse(response.content) ))
 
         if not response_dict['Response']['Login']['status'] == "Authentication Successful":
             raise Exception(response_dict['Response']['Login']['status'])
