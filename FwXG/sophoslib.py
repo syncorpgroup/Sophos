@@ -101,6 +101,10 @@ class sophosxg(object):
         self.make_xml('Get', 'IPHostGroup')
         return self.send()
 
+    def get_network_interface(self):
+        self.make_xml('Get', 'Interface')
+        return self.send()
+
     def get_network_vlan(self):
         self.make_xml('Get', 'VLAN')
         return self.send()
@@ -123,6 +127,30 @@ class sophosxg(object):
 
     def get_firewallrule(self):
         self.make_xml('Get', 'FirewallRule')
+        return self.send()
+
+    def get_routing_unicast(self):
+        self.make_xml('Get', 'UnicastRoute')
+        return self.send()
+
+    def get_sys_services(self):
+        self.make_xml('Get', 'SystemServices')
+        return self.send()
+
+    def get_sys_centralmgmt(self):
+        self.make_xml('Get', 'CentralManagement')
+        return self.send()
+
+    def get_sys_notification(self):
+        self.make_xml('Get', 'Notification')
+        return self.send()
+
+    def get_conf_log(self):
+        self.make_xml('Get', 'SyslogServers')
+        return self.send()
+
+    def get_custom(self,custom):
+        self.make_xml('Get', custom)
         return self.send()
 ##########################################################################
 # Set subclasses
