@@ -10,8 +10,6 @@ https://docs.sophos.com/nsg/sophos-firewall/18.0/API/index.html
 <<<<<<< HEAD
 
 =======
-HOLA SUSSYYY
->>>>>>> e3ee84f72878e91e2b28e06b6b9cbf1a18bdef4c
 Usage:
 -----------
 Declare user, pass and IP to connect a Firewall XG.
