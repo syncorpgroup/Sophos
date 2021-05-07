@@ -7,9 +7,7 @@ Introduction:
 Library to control a Sophos Firewall XG via API.
 The idea here is construct a HTTP GET in XML form-based as mentioned on API Sophos link:
 https://docs.sophos.com/nsg/sophos-firewall/18.0/API/index.html
-<<<<<<< HEAD
 
-=======
 Usage:
 -----------
 Declare user, pass and IP to connect a Firewall XG.
